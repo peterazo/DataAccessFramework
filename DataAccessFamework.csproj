@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F716F29D-527D-4285-BB05-8C3C005B91D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAF</RootNamespace>
+    <AssemblyName>DataAccessFamework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizationFailedException.cs" />
+    <Compile Include="CachePolicy.cs" />
+    <Compile Include="Caching\CacheItem.cs" />
+    <Compile Include="Caching\CachePool.cs" />
+    <Compile Include="Caching\MemoryCache.cs" />
+    <Compile Include="Core\EntityMapper.cs" />
+    <Compile Include="Core\InterfaceResolver.cs" />
+    <Compile Include="Core\Session.cs" />
+    <Compile Include="Core\SessionDriver.cs" />
+    <Compile Include="Core\SessionFactory.cs" />
+    <Compile Include="DataAccessConfiguration.cs" />
+    <Compile Include="DataConvertors.cs" />
+    <Compile Include="GenericSessionDriver.cs" />
+    <Compile Include="ICache.cs" />
+    <Compile Include="ICachePool.cs" />
+    <Compile Include="IQuery.cs" />
+    <Compile Include="ISecurityToken.cs" />
+    <Compile Include="ISession.cs" />
+    <Compile Include="ISessionDriver.cs" />
+    <Compile Include="ISessionFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryParameterAttribute.cs" />
+    <Compile Include="Query\BaseQuery.cs" />
+    <Compile Include="Query\ParameterMapper.cs" />
+    <Compile Include="SecurityToken.cs" />
+    <Compile Include="ServerConfiguration.cs" />
+    <Compile Include="SQL\SqlEntityMapper.cs" />
+    <Compile Include="SQL\SqlParameterMapper.cs" />
+    <Compile Include="SQL\SqlQuery.cs" />
+    <Compile Include="SQL\SqlSessionDriver.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
